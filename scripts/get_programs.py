@@ -10,7 +10,7 @@ clean_file = os.path.join(dataset_dir, "k562_5k_clean.h5ad")
 
 print(f"Loading {h5ad_file}...")
 adata = sc.read_h5ad(h5ad_file)
-sc.pp.filter_cells(adata, min_counts=1)  # REQUIRED: Removes cells with 0 reads (NaN source)
+sc.pp.filter_cells(adata, min_counts=1)  
 sc.pp.filter_genes(adata, min_cells=1)
 
 adata.write(clean_file)
