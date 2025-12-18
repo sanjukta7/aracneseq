@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aracneseq"
+version = "0.1.0"
+description = "Setting up evals for VC use case"
+readme = "README.md"
+authors = [
+  { name = "Sanjukta Bhattacharya" },
+]
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "anndata",
+    "cnmf",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "scanpy",
+    "seaborn",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["scripts*"]
+exclude = ["datasets*", "models*"]
+
