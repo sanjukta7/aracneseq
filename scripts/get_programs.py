@@ -1,8 +1,12 @@
 import scanpy as sc
 import scipy.sparse
+import os
 
-h5ad_file = "/home/b5cc/sanjukta.b5cc/aracneseq/datasets/k562_5k.h5ad"
-clean_file = "/home/b5cc/sanjukta.b5cc/aracneseq/datasets/k562_5k_clean.h5ad"
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+dataset_dir = os.path.join(base_dir, "datasets")
+
+h5ad_file = os.path.join(dataset_dir, "k562_5k.h5ad")
+clean_file = os.path.join(dataset_dir, "k562_5k_clean.h5ad")
 
 print(f"Loading {h5ad_file}...")
 adata = sc.read_h5ad(h5ad_file)
